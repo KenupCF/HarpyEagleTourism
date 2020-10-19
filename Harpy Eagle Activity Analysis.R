@@ -381,9 +381,6 @@ resuActivia0<-lapply(categs,function(d){
 
 }
 
-RPushbullet::pbPost("note",title="Harpy Activity Finished",
-                    apikey="o.8v2VQ88kZXsMdUrk86PtaxXfbsaPOwMm")
-
 save(resuActivia0,file="Activity Results.RData")
 
 ####Probabilidade de uma camera detectar uma harpia
@@ -560,8 +557,6 @@ names(resu)<-apply(simulation.pars,1,paste,collapse = "-")
 names(models)<-names(resu)
 
 save(resu,models,bootstrapped,bootstrapList,file="Detection Probability v2.RData")
-RPushbullet::pbPost("note",title="Harpy Prob Detection Finished",
-                    apikey="o.8v2VQ88kZXsMdUrk86PtaxXfbsaPOwMm")
 
 
 rbind.fill(bootstrapped)%>%
@@ -741,9 +736,5 @@ propFast<-sum(detection.df$detectionDuration==0)/nrow(detection.df)
 
 
 save(detection.df,file="Harpy Time Spent on Nest.RData")
-RPushbullet::pbPost("note",title="Harpy Prob Detection Finished",
-                    apikey="o.8v2VQ88kZXsMdUrk86PtaxXfbsaPOwMm")
-
-
 
 save.image(file="Full.RData")
